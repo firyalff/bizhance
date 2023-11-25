@@ -1,0 +1,8 @@
+BEGIN;
+
+DROP TABLE IF EXISTS product_material_items CASCADE;
+DROP TYPE CURRENCY_ENUM CASCADE;
+DROP TABLE IF EXISTS product_material_categories CASCADE;
+DROP TABLE IF EXISTS product_material_brands CASCADE;
+
+COMMIT;
