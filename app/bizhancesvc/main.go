@@ -7,6 +7,8 @@ import (
 	"os"
 	"strconv"
 
+	"bizhancesvc/modules/auth"
+
 	"github.com/mkideal/cli"
 )
 
@@ -38,7 +40,10 @@ func main() {
 
 		baseRouter := router.Group("")
 
-		registerRoutes(baseRouter)
+		registerHandlers(baseRouter)
+		auth.InitModule(DBPool, *cfg, baseRouter)
+
+		//routes below are protected by JWT
 
 		return drivers.StartRouteServer(router, strconv.Itoa(cfg.ServerPort))
 	}))

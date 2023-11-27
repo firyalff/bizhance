@@ -6,7 +6,7 @@ import (
 	"github.com/gofiber/fiber/v2"
 )
 
-func registerRoutes(router fiber.Router) {
+func registerHandlers(router fiber.Router) {
 	router.Get("/version", getVersionHandler)
 }
 
